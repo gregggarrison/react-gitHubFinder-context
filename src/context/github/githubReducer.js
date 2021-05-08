@@ -3,9 +3,11 @@ import {
     SET_LOADING,
     CLEAR_USERS,
     GET_USER,
+    CLEAR_USER,
     GET_REPOS
 } from '../types';
 
+// eslint-disable-next-line 
 export default (state, action) => {
     switch (action.type) {
         case SEARCH_USERS:
@@ -30,6 +32,13 @@ export default (state, action) => {
             return {
                 ...state,
                 users: [],
+                loading: false
+            }
+        case CLEAR_USER:
+            return {
+                ...state,
+                user: {},
+                repos: [],
                 loading: false
             }
         case SET_LOADING:
